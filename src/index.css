@@ -1,0 +1,235 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased bg-bg-primary text-text-primary;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-semibold;
+  }
+
+  * {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+
+  @keyframes slideBackground {
+    0% {
+      transform: translate(0, 0);
+    }
+
+    100% {
+      transform: translate(20px, 20px);
+    }
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes pulse {
+
+    0%,
+    100% {
+      opacity: 0.4;
+    }
+
+    50% {
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes bounce {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes twinkle {
+
+    0%,
+    100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-bg-secondary rounded-lg border border-border shadow-card transition-all duration-300;
+  }
+
+  .card:hover {
+    @apply shadow-card-hover;
+  }
+
+  .btn {
+    @apply px-6 py-3 bg-accent text-white font-semibold border-4 border-black shadow-pixel hover:shadow-pixel-hover transition-all duration-200;
+  }
+
+  .btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.15);
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 border-4 border-text-primary text-text-primary font-semibold bg-bg-secondary shadow-pixel hover:shadow-pixel-hover transition-all duration-200;
+  }
+
+  .btn-outline:active {
+    transform: translate(4px, 4px);
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Strong Pixel-style enhancements */
+  .pixel-text {
+    font-family: 'Press Start 2P', cursive;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.05em;
+  }
+
+  .pixel-border {
+    border-style: solid;
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.15);
+  }
+
+  .pixel-border:hover {
+    box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  .pixel-tag {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.65rem;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+    border-width: 3px;
+    border-style: solid;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .pixel-tag:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .pixel-bullet {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+
+  .pixel-btn {
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s;
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .pixel-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  .pixel-btn:active {
+    transform: translate(3px, 3px);
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.15);
+  }
+
+  .pixel-nav {
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
+    border-width: 4px;
+  }
+
+  .pixel-nav:hover {
+    transform: translate(-2px, -2px) translateY(-50%);
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .pixel-nav:active {
+    transform: translate(3px, 3px) translateY(-50%);
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.15);
+  }
+
+  .pixel-indicator {
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.15);
+    border-width: 2px;
+  }
+
+  .pixel-indicator:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Vietnamese text support with pixel aesthetic */
+  .pixel-text-vn {
+    font-family: 'VT323', monospace;
+    font-weight: 400;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.05em;
+  }
+
+  /* Animation utilities */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 4s ease-in-out infinite;
+  }
+
+  .animate-rotate {
+    animation: rotate 20s linear infinite;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce 2s ease-in-out infinite;
+  }
+
+  .animate-twinkle {
+    animation: twinkle 3s ease-in-out infinite;
+  }
+
+  /* Pixel element styling */
+  .pixel-element {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+}
