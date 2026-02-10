@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply antialiased bg-bg-primary text-text-primary;
   }
@@ -18,6 +22,31 @@
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #1A1A1A;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #404040;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00D9FF;
+  }
+
+  /* Firefox scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #404040 #1A1A1A;
   }
 
   @keyframes slideBackground {
@@ -101,21 +130,33 @@
   }
 
   .btn {
-    @apply px-6 py-3 bg-accent text-white font-semibold border-4 border-black shadow-pixel hover:shadow-pixel-hover transition-all duration-200;
+    @apply px-4 py-2 sm:px-6 sm:py-3 bg-accent text-white font-semibold border-3 sm:border-4 border-black shadow-pixel hover:shadow-pixel-hover transition-all duration-200;
   }
 
   .btn:active {
-    transform: translate(4px, 4px);
+    transform: translate(3px, 3px);
     box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.15);
+  }
+
+  @media (min-width: 640px) {
+    .btn:active {
+      transform: translate(4px, 4px);
+    }
   }
 
   .btn-outline {
-    @apply px-6 py-3 border-4 border-text-primary text-text-primary font-semibold bg-bg-secondary shadow-pixel hover:shadow-pixel-hover transition-all duration-200;
+    @apply px-4 py-2 sm:px-6 sm:py-3 border-3 sm:border-4 border-text-primary text-text-primary font-semibold bg-bg-secondary shadow-pixel hover:shadow-pixel-hover transition-all duration-200;
   }
 
   .btn-outline:active {
-    transform: translate(4px, 4px);
+    transform: translate(3px, 3px);
     box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.15);
+  }
+
+  @media (min-width: 640px) {
+    .btn-outline:active {
+      transform: translate(4px, 4px);
+    }
   }
 
   /* Strong Pixel-style enhancements */

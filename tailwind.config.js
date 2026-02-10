@@ -10,6 +10,9 @@ export default {
                 sans: ["'Inter'", "system-ui", "sans-serif"],
                 pixel: ["'Press Start 2P'", "cursive"],
             },
+            borderWidth: {
+                '3': '3px',
+            },
             colors: {
                 // Dark, bold, and neutral color scheme
                 'bg-primary': '#1A1A1A',        // Dark charcoal background
