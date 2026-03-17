@@ -48,7 +48,7 @@ function ProjectPage() {
             <motion.button
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                onClick={() => navigate(-1)}
+                onClick={() => window.location.href = "https://buzlc2k.github.io/Bufolio/"}
                 className="fixed top-4 left-4 sm:top-6 sm:left-6 z-50 flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2.5 bg-bg-secondary border-2 sm:border-4 border-border rounded-lg shadow-card hover:bg-accent hover:text-white hover:border-accent transition-all duration-200 text-text-primary text-xs sm:text-sm font-bold pixel-btn"
             >
                 <ArrowLeft size={16} />
